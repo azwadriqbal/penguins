@@ -13,4 +13,5 @@ data(package = 'palmerpenguins')
 ## Data
 This dataset is composed of morphometric and demographic measurements of a variety of penguin species in Antarctica compiled by Dr. Kristen Gorman and the Palmer Station.
 
-![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)  
+
