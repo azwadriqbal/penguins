@@ -14,15 +14,14 @@ head(penguins)
 ```
 
     ## # A tibble: 6 x 8
-    ##   species island bill_length_mm bill_depth_mm flipper_length_~ body_mass_g sex  
-    ##   <fct>   <fct>           <dbl>         <dbl>            <int>       <int> <fct>
-    ## 1 Adelie  Torge~           39.1          18.7              181        3750 male 
-    ## 2 Adelie  Torge~           39.5          17.4              186        3800 fema~
-    ## 3 Adelie  Torge~           40.3          18                195        3250 fema~
-    ## 4 Adelie  Torge~           NA            NA                 NA          NA <NA> 
-    ## 5 Adelie  Torge~           36.7          19.3              193        3450 fema~
-    ## 6 Adelie  Torge~           39.3          20.6              190        3650 male 
-    ## # ... with 1 more variable: year <int>
+    ##   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g sex     year
+    ##   <fct>   <fct>              <dbl>         <dbl>             <int>       <int> <fct>  <int>
+    ## 1 Adelie  Torgersen           39.1          18.7               181        3750 male    2007
+    ## 2 Adelie  Torgersen           39.5          17.4               186        3800 female  2007
+    ## 3 Adelie  Torgersen           40.3          18                 195        3250 female  2007
+    ## 4 Adelie  Torgersen           36.7          19.3               193        3450 female  2007
+    ## 5 Adelie  Torgersen           39.3          20.6               190        3650 male    2007
+    ## 6 Adelie  Torgersen           38.9          17.8               181        3625 female  2007
 
 <br>
 
@@ -45,7 +44,7 @@ penguin species.
 ## Relationship between multiple traits
 
 Let’s look at the relationship between body mass and flipper length
-among penguins, separated by species?
+among penguins, separated by species!
 
 ``` r
 ggplot(penguins, aes(color = species, x = body_mass_g, y = flipper_length_mm)) +
