@@ -1,0 +1,22 @@
+---
+title: "sexual dimorphism"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dpi=300)
+library(palmerpenguins)
+library(tidyverse)
+library(ggsignif)
+```
+
+## Sexual Dimorphism
+```{r sex_dimorphism, fig.height=5, fig.width=10, warning=FALSE}
+penguins <- na.omit(penguins)
+ggplot(penguins, aes(color = sex, x = sex, y = body_mass_g)) +
+ geom_boxplot(aes(fill = sex, alpha = 0.3)) +
+  geom_jitter(width = 0.5) +
+  facet_wrap(~species) +
+  geom_signif(comparisons = list(c("female","male")), map_signif_level = TRUE, color = "black")
+
+```

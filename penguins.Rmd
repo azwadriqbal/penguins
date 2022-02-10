@@ -1,0 +1,58 @@
+---
+title: "penguins"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dpi=300)
+library(palmerpenguins)
+library(tidyverse)
+library(ggsignif)
+
+```
+## Data
+This dataset is composed of morphometric and demographic measurements of a variety of penguin species in Antarctica compiled by Dr. Kristen Gorman and the Palmer Station.
+
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+
+```{r data}
+head(penguins)
+```
+
+<br>  
+
+## Single trait distribution
+Let's look at the trait distribution for body mass by species!  
+
+```{r single_trait_distribution, warning=FALSE}
+ggplot(penguins, aes(color = species, y = body_mass_g, x = species)) +
+  geom_boxplot(aes(fill = species, alpha = 0.3)) +
+  geom_jitter()  
+  
+```
+Seems like Gentoo penguins have the highest mass on average of all three penguin species.  
+
+<br>
+
+## Relationship between multiple traits
+Let's look at the relationship between body mass and flipper length among penguins, separated by species!  
+
+```{r rel_multiple_traits, warning=FALSE}
+ggplot(penguins, aes(color = species, x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(shape = 1) +
+  geom_smooth(method = 'lm')
+
+```
+<br>  
+
+## Sexual Dimorphism
+```{r sex_dimorphism, fig.height=5, fig.width=10, warning=FALSE}
+penguins <- na.omit(penguins)
+ggplot(penguins, aes(color = sex, x = sex, y = body_mass_g)) +
+ geom_boxplot(aes(fill = sex, alpha = 0.3)) +
+  geom_jitter(width = 0.5) +
+  facet_wrap(~species) +
+  geom_signif(comparisons = list(c("female","male")), map_signif_level = TRUE, color = "black")
+
+```
+

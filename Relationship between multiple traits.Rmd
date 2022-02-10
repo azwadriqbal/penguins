@@ -1,0 +1,21 @@
+---
+title: "Relationship between multiple traits"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dpi=300)
+library(palmerpenguins)
+library(tidyverse)
+library(ggsignif)
+```
+
+## Relationship between multiple traits
+Let's look at the relationship between body mass and flipper length among penguins, separated by species!    
+
+```{r rel_multiple_traits, warning=FALSE}
+ggplot(penguins, aes(color = species, x = body_mass_g, y = flipper_length_mm)) +
+  geom_point(shape = 1) +
+  geom_smooth(method = 'lm')
+
+```

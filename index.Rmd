@@ -1,0 +1,16 @@
+---
+title: "Home"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dpi=300)
+library(palmerpenguins)
+library(tidyverse)
+library(ggsignif)
+data(package = 'palmerpenguins')
+```
+## Data
+This dataset is composed of morphometric and demographic measurements of a variety of penguin species in Antarctica compiled by Dr. Kristen Gorman and the Palmer Station.
+
+![](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
