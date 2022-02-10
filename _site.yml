@@ -5,7 +5,7 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "Single trait distribution"
-      href: Single-trait-distribution.html
+      href: Single-trait-distrbution.html
     - text: "Relationship between multiple traits"
       href: Relationship-between-multiple-traits.html
     - text: "Sexual Dimorphism"
